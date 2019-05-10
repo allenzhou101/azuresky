@@ -1,0 +1,261 @@
+body {
+  height: 100vh;
+  margin: 0;
+  background-color: black;
+  font-family: 'Questrial', sans-serif;
+  overflow: hidden;
+  color: white;
+  transition: .5s;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.backgroundDiv {
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  transform: scale(1);
+  filter: brightness(50%);
+}
+.outerBackgroundDiv {
+  transition: .5s;
+}
+.circ {
+    transition: .5s;
+    animation: pulse 10s infinite linear alternate;
+    z-index: 0;
+    font-size: 30px;
+    display: inline-block;
+    text-align: center;
+    filter: brightness(80%) blur(0px);
+    color: transparent;
+    padding-top: 7vh;
+    /*transform: rotateY(30deg) ; */
+}
+.circ:hover {
+  filter: brightness(100%) blur(0px);
+  color: white;
+  /* transform: scale(1.5) rotateX(0deg) rotateY(60deg); */
+}
+@keyframes pulse {
+  20% {
+    background: #42f4e5;
+  }
+  40% {
+    background: #d6ff51;
+  }
+  60% {
+    background: #ed7d4e;
+  }
+  80% {
+    background: #b145ef;
+  }
+  100% {
+    background: #f449a7;
+  }
+}
+
+.nav-bar {
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  font-size: 25px;
+  animation: in 1s 2s forwards;
+  opacity: 0;
+}
+.left {
+  transform: rotate(90deg) ;
+  position: inherit;
+  margin-top: 50vh;
+}
+.nav-bar a{
+  transition: .5s;
+  text-align: center;
+  display: inline-block;
+  letter-spacing: 0px;
+  height: 4vh;
+  width: 10vw;
+}
+.nav-bar a:hover {
+  letter-spacing: 2px;
+}
+.top {
+  position: inherit;
+  text-align: center;
+  margin-top: 4vh;
+  margin-left: 45%;
+  text-align: center;
+}
+.right {
+  position: inherit;
+  transform: rotate(-90deg) ;
+  right: 0vw;
+  margin-top: 50vh;
+}
+
+
+@keyframes fadeIn {
+  100% {
+    transform: translateY(0);
+  }
+}
+.title-container {
+  width: 100%;
+  display: inline-block;
+  margin-top: 5vh;
+  text-align: center;
+  z-index: 2;
+  position: absolute;
+  pointer-events: none;
+
+}
+.title {
+  font-family: 'Shadows Into Light', cursive;
+  font-weight: bold;
+  font-size: 14vh;
+  width: 100%;
+  margin-top: 20vh;
+  display: inline-block;
+  height: 25vh;
+  overflow: hidden;
+
+}
+.title-animation {
+  transform: translateY(-25vh);
+  transition: 1s;
+  animation: fadeIn 1s 1s forwards;
+
+}
+.selections {
+  height: 60vh;
+  white-space: nowrap;
+}
+.selections a {
+  display: inline-block;
+  font-size: 30vh;
+  margin: 5vh;
+  letter-spacing: 0px;
+}
+.title-description {
+  font-size: 1.5vw;
+  margin-top: 0vh;
+  width: 60%;
+  /* color: #bcbcbc; */
+  display: inline-block;
+ }
+ .des-a, .des-b {
+   overflow: hidden;
+   height: 4vh;
+ }
+ .des-a-inner, .des-b-inner {
+   transform: translateY(-5vh);
+   animation: fadeIn 1s 1.5s forwards;
+   transition: 1s;
+
+ }
+
+ /*
+.title-dot {
+  display: inline-block;
+  text-align: center;
+  width: 10vh;
+  height: 120px;
+  border: 2px solid gray;
+  border-radius: 50%;
+  vertical-align: top;
+  margin-top: 100px;
+  cursor: pointer;
+  position: relative;
+  pointer-events: auto;
+
+} */
+svg {
+	 width: 240px;
+	 height: 240px;
+	 background: transparent;
+}
+ svg #shape {
+	 fill: none;
+	 stroke: gray;
+	 stroke-width: .75;
+	 transition: all 2s 1s ease-in-out;
+}
+svg #shape2 {
+  fill: none;
+  stroke: #42dff4;
+  stroke-width: 1;
+  transition: all 4s 1s ease-in-out;
+}
+.title-continue {
+  height: 4vh;
+  overflow: hidden;
+  transform: translateY(-6vh);
+
+}
+.title-continue div {
+  display: inline-block;
+  transform: translateY(-6vh);
+  animation: fadeIn 1s 2s forwards;
+  pointer-events: auto;
+}
+.extra {
+  display: none;
+}
+.hero-image {
+  margin-top: 30vh;
+}
+.hero-image img{
+  width: 60vw;
+}
+
+.emoji-rain {
+  margin-top: 25vh;
+  color: gray;
+  display: inline-block;
+  padding: 1vh;
+  cursor: pointer;
+  pointer-events: all;
+  transition: background .5s, border .5s, box-shadow .5s, transform 1s;
+  border: 1px solid gray;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  animation: in 1s 2s forwards;
+  opacity: 0;
+}
+@keyframes in {
+  0% {
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(00px);
+  }
+}
+.emoji-rain div {
+  transform: translateY(100%);
+
+  vertical-align: middle;
+}
+
+.emoji-rain:hover {
+  background: white;
+  border: 1px solid white;
+}
+.emoji-rain:active {
+  transition: .001s;
+  background: black;
+  box-shadow: 0px 0px 20px 20px rgba(0,0,0,0.6);
+}
+@keyframes emojiAnimation {
+  0% {
+    top: 0;
+
+  }
+  100% {
+    top: 100vh;
+    /* transform: rotate(180deg); */
+    display: none;
+  }
+}
