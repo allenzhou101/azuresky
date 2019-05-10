@@ -1,0 +1,49 @@
+.nav-bar {
+  position: fixed;
+  top: 2vh;
+  width: 100%;
+  animation: navIn 1s forwards;
+  transform: translateY(-10vh);
+  z-index: 20;
+}
+@keyframes navIn {
+  100% {
+    transform: translateY(0);
+  }
+}
+.logo {
+  font-family: 'Shadows Into Light', cursive;
+  display: inline-block;
+  width: 20vw;
+  margin-left: 5vw;
+}
+.menu-container {
+  display: inline-block;
+  text-align: right;
+  width: 70vw;
+}
+.menu {
+  display: inline-block;
+  width: 20px;
+  cursor: pointer;
+}
+.menu:hover .l2{
+  width: 100%;
+}
+.menu div{
+  height: 2px;
+  background: white;
+  margin-top: 1vh;
+}
+.l1 {
+  width: 100%;
+
+}
+.l2 {
+  width: 80%;
+  transition: .5s;
+}
+.l3 {
+  width: 100%;
+
+}

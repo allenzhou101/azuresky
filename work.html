@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+  <link href = "navigation.css" rel = "stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      font-family: 'Questrial', sans-serif;
+      color: white;
+      transition: .5s;
+    }
+    .work {
+      font-family: 'Shadows Into Light', cursive;
+      width: 100%;
+      margin-top: 10vh;
+      font-size: 20vh;
+      text-align: center;
+      animation: fadeIn 1s forwards;
+      opacity: 0;
+    }
+    @keyframes fadeIn {
+      100% {
+        opacity: 1;
+      }
+    }
+    .work-description {
+      width: 100%;
+      margin-top: 10vh;
+      font-size: 5vh;
+      text-align: center;
+      animation: fadeIn 1s .25s forwards;
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class = "nav-bar">
+    <div class = "logo">Azure Sky</div>
+    <div class = "menu-container">
+      <div class = "menu" onclick = "pageTransition()">
+        <div class = "l1"></div>
+        <div class = "l2"></div>
+        <div class = "l3"></div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class = "work">
+    work
+  </div>
+  <div class = "work-description">
+    we are located in dallas. our emails and stuff are located below
+  </div>
+  <script>
+
+
+
+    function pageTransition() {
+    document.body.style.opacity = "0";
+      setTimeout(function() {
+        window.location.href = 'index.html';
+      }, 500);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  background: black;
+  color: white;
+  font-family: 'Questrial', sans-serif;
+  transition: .5s;
+  /* height: 1000vh; */
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+/* ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+} */
+.box-1, .box-2, .box-3, .box-4, .box-5 {
+  height: 100vh;
+}
+.box-3 {
+  margin-top: 400vh;
+}
+.hero-container {
+  text-align: center;
+  width:100%;
+}
+.hero-paragraph {
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 10%;
+  font-size: 4vw;
+  line-height: 60px;
+
+}
+.image-container {
+  width: 100%;
+  text-align: center;
+  /* margin-top: 10vh; */
+}
+.image-container img {
+  width: 60vw;
+}
+.alpha {
+  margin-top: 20vh;
+  position: sticky;
+  top: 20vh;
+  white-space: nowrap;
+  margin-left: 20vw;
+  margin-left: 20vw;
+}
+.words {
+  display: inline-block;
+  /* margin-left: 20vw; */
+  width: 30vw;
+  font-size: 6vh;
+  white-space: normal;
+  transform-origin: bottom left;
+  transform: rotate(-90deg);
+}
+.image {
+  margin-right: 20vw;
+  display: inline-block;
+}
+
+.sitcky-area {
+  height: 580vh;
+  width: 20vh;
+  /* background: white; */
+}
+
+.who {
+  position: relative;
+  font-size: 10vw;
+  margin-top: 20vh;
+  margin-left: -50vw;
+  color: black;
+  text-shadow:
+		-1px -1px 0 white,
+		1px -1px 0 white,
+		-1px 1px 0 white,
+		1px 1px 0 white;
+}
+
+
+.more-words {
+  font-size: 15vh;
+  margin-left: 10vw;
+}
+.work-link {
+  margin-top: 60vh;
+  position: absolute;
+  font-size: 60px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 45vh;
+}
+.work-link a{
+  transition: .5s;
+}
+.work-link a:hover {
+  color: gray;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+  <link href = "about.css" rel = "stylesheet">
+  <link href = "navigation.css" rel = "stylesheet">
+
+</head>
+<body>
+  <div class = "nav-bar">
+    <div class = "logo">Azure Sky</div>
+    <div class = "menu-container">
+      <div class = "menu" onclick = "pageTransition()">
+        <div class = "l1"></div>
+        <div class = "l2"></div>
+        <div class = "l3"></div>
+
+      </div>
+    </div>
+  </div>
+  <div class = "box-1">
+    <div class = "hero-container">
+      <div class = "hero-paragraph">
+        We are a passionately curated international team united
+        by the same intention — to create remarkably beautiful
+        things that make an impact, shape culture and connect people.
+      </div>
+      <div class = "image-container">
+        <!-- <img src = "images/dallas-skyline.jpg"> -->
+        <div class = "alpha">
+          <div class = "image">
+            <img src = "images/dallas-skyline.jpg">
+          </div>
+          <div class = "image">
+            <img src = "images/dallas-skyline.jpg">
+          </div>
+          <div class = "image">
+            <img src = "images/dallas-skyline.jpg">
+          </div>
+
+          <!-- <div class = "words">
+            to create remarkably beautiful
+            things that make an impact, shape culture a
+          </div> -->
+        </div>
+
+        <!-- <img src = "images/dallas-skyline.jpg"> -->
+        <div class = "sitcky-area"></div>
+      </div>
+    </div>
+
+
+  </div>
+  <div class = "box-2">
+    <div class = "who">
+      Based in Dallas, Texas
+    </div>
+
+  </div>
+  <div class = "box-3">
+    <div class = "more-words">
+      to create remarkably beautiful
+      things that make an impact, shape culture ato create remarkably beautiful
+      things that make an impact, shape culture ato create remarkably beautiful
+      things that make an impact, shape culture ato create remarkably beautiful
+      things that make an impact, shape culture ato create remarkably beautiful
+      things that make an impact, shape culture ato create remarkably beautiful
+      things that make an impact, shape culture ato create remarkably beautiful
+      things that make an impact, shape culture ato create remarkably beautiful
+      things that make an impact, shape culture ato create remarkably beautiful
+      things that make an impact, shape culture ato create remarkably beautiful
+      things that make an impact, shape culture ato create remarkably beautiful
+      things that make an impact, shape culture ato create remarkably beautiful
+      things that make an impact, shape culture ato create remarkably beautiful
+      things that make an impact, shape culture ato create remarkably beautiful
+      things that make an impact, shape culture ato create remarkably beautiful
+      things that make an impact, shape culture ato create remarkably beautiful
+      things that make an impact, shape culture ato create remarkably beautiful
+      things that make an impact, shape culture ato create remarkably beautiful
+      things that make an impact, shape culture ato create remarkably beautiful
+      things that make an impact, shape culture a
+    </div>
+    <div class = "work-link">
+      <a href = "work.html">view our work&#8594;</a>
+    </div>
+  </div>
+  <!-- <div class = "box-4">
+
+  </div>
+  <div class = "box-5">
+
+  </div> -->
+
+  <script>
+  function pageTransition() {
+  document.body.style.opacity = "0";
+    setTimeout(function() {
+      window.location.href = 'index.html';
+    }, 500);
+  }
+  document.addEventListener("scroll", function() {
+    var y = window.pageYOffset;
+    var transformNum = y - screen.height;
+    var transformNumLeft = y;
+    var lineHeight = 60 + y / 10;
+    var opacityNum = 1 - y / 400;
+
+    if (transformNum >= 0) {
+        document.querySelector(".alpha").style.transform = "translateX(-" + transformNum + "px)";
+    }
+    else {
+      document.querySelector(".alpha").style.transform = "translateX(0px)";
+    }
+
+    document.querySelector(".who").style.transform = "translateX(" + transformNumLeft + "px)";
+    console.log(lineHeight);
+    document.querySelector('.hero-paragraph').style.lineHeight = lineHeight + "px";
+    document.querySelector('.hero-paragraph').style.opacity = opacityNum;
+
+  });
+  </script>
+</body>
+</html>
