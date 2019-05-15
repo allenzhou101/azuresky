@@ -14,9 +14,9 @@
 
 <div class = "outerBackgroundDiv"><div class = "backgroundDiv"></div></div>
 <div class = "nav-bar">
-  <a href = "#0" class = "left" onmouseover = "changeColor(true)" onmouseout = "changeColor(false)" onclick = "pageTransition('about')">about</a>
-  <a href = "work.html" class = "top" onmouseover = "changeColor(true)" onmouseout = "changeColor(false)" onclick = "pageTransition('work')">work</a>
-  <a href = "contact.html" class = "right" onmouseover = "changeColor(true)" onmouseout = "changeColor(false)" onclick = "pageTransition('contact')">contact</a>
+  <a href = "#0" class = "left" onmouseover = "changeColor(true)" onmouseout = "changeColor(false)" onclick = "pageTransition('about')">about</a><!--
+  --><a href = "work.html" class = "top" onmouseover = "changeColor(true)" onmouseout = "changeColor(false)" onclick = "pageTransition('work')">work</a><!--
+  --><a href = "contact.html" class = "right" onmouseover = "changeColor(true)" onmouseout = "changeColor(false)" onclick = "pageTransition('contact')">contact</a>
 </div>
 <div class = "title-container">
   <div class = "title">
@@ -41,18 +41,18 @@
       <div>click anywhere to continue</div>
     </div>
   </div>
-  <!-- data-aos="fade-up" data-aos-delay="2000" data-aos-duration = "1000" -->
-  <div class = "emoji-rain" >
+  <!-- <div class = "emoji-rain" >
     <div style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;"
  unselectable="on"
  onselectstart="return false;"
  onmousedown="return false;">tap</div>
-  </div>
-  <!-- <div class = "hero-image">
-    <img src = "images/dallas-skyline.jpg" alt = "an image of the Dallas skyline">
   </div> -->
+  <div class="c-scrolldown">
+    <div class="c-line"></div>
+  </div>
+  <div class = "about-page">
 
-
+  </div>
 <script>
 
 if (screen.width > 1080) {
@@ -110,6 +110,7 @@ function mobileFriendly() {
           div.style.position = "absolute";
           div.style.marginLeft = marginLeft + "vh";
           div.style.marginTop = marginTop + "vh";
+          div.style.padding = "0";
           var emojiArray = ["🙉", "😂", "👋", "👋", "", "", "", ""];
           var emojiNum = parseInt(Math.random() * 8);
           div.innerHTML = emojiArray[emojiNum];
@@ -139,43 +140,51 @@ function changeColor(bool) {
 </script>
 
 <script>
-var emojiBoolean = true;
-  document.querySelector('.emoji-rain').addEventListener("mousedown", function() {
-    var num = Math.random()*50;
-    makeEmoji();
-  });
-  function makeEmoji() {
-    var marginLeft = Math.random()*screen.width;
-    var animDuration = Math.random()*5 + 5;
-    var emoji = ['🌽', '🍇', '🍌', '🍒', '🍕', '🍷', '🍭', '💖', '💩', '🐷', '🐸', '🐳', '🎃', '🎾', '🌈', '🍦', '💁', '🔥', '😁', '😱', '🌴', '👏', '💃'];
-    var emojiNum = parseInt(Math.random()*emoji.length);
-    var div = document.createElement('div');
-    div.className = "emojiDiv";
-    div.style.marginLeft = marginLeft + "px";
-    div.style.animationName = "emojiAnimation";
-    div.style.animationDuration = animDuration + "s";
-    div.style.animationIterationCount = "1";
-    div.style.animationTimingFunction = "linear";
-    div.style.animationFillMode = "forwards";
-    div.style.position = "absolute";
-    div.style.fontSize = "20px";
-    div.style.pointerEvents = "none";
-    var zIndex = Math.random() * 2.5 + .5;
-    var parsedzIndex = parseInt(zIndex);
-    div.style.transform = "scale(" + zIndex + ")";
-    div.style.zIndex = "" + parsedzIndex;
-    div.style.color = "black";
-    div.style.filter = "brightness(80%) blur(0px)";
-    div.addEventListener("animationend", function() {
-      document.body.removeChild(div);
-    }, false);
-    div.innerHTML = "" + emoji[emojiNum];
-    document.body.appendChild(div);
+// var emojiBoolean = true;
+//   document.querySelector('.emoji-rain').addEventListener("mousedown", function() {
+//     var num = Math.random()*50;
+//     makeEmoji();
+//   });
+//   function makeEmoji() {
+//     var marginLeft = Math.random()*screen.width;
+//     var animDuration = Math.random()*5 + 5;
+//     var emoji = ['🌽', '🍇', '🍌', '🍒', '🍕', '🍷', '🍭', '💖', '💩', '🐷', '🐸', '🐳', '🎃', '🎾', '🌈', '🍦', '💁', '🔥', '😁', '😱', '🌴', '👏', '💃'];
+//     var emojiNum = parseInt(Math.random()*emoji.length);
+//     var div = document.createElement('div');
+//     div.className = "emojiDiv";
+//     div.style.marginLeft = marginLeft + "px";
+//     div.style.animationName = "emojiAnimation";
+//     div.style.animationDuration = animDuration + "s";
+//     div.style.animationIterationCount = "1";
+//     div.style.animationTimingFunction = "linear";
+//     div.style.animationFillMode = "forwards";
+//     div.style.position = "absolute";
+//     div.style.fontSize = "20px";
+//     div.style.pointerEvents = "none";
+//     var zIndex = Math.random() * 2.5 + .5;
+//     var parsedzIndex = parseInt(zIndex);
+//     div.style.transform = "scale(" + zIndex + ")";
+//     div.style.zIndex = "" + parsedzIndex;
+//     div.style.color = "black";
+//     div.style.filter = "brightness(80%) blur(0px)";
+//     div.addEventListener("animationend", function() {
+//       document.body.removeChild(div);
+//     }, false);
+//     div.innerHTML = "" + emoji[emojiNum];
+//     document.body.appendChild(div);
+//   }
+//
+//
+//
+document.addEventListener("scroll", function() {
+  var y = window.scrollY;
+  if (y > screen.height){
+    document.querySelector(".nav-bar").style.position = "fixed";
   }
-
-
-
-
+  else {
+    document.querySelector(".nav-bar").style.position = "absolute";
+  }
+});
 </script>
 </body>
 </html>
