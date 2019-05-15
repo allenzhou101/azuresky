@@ -21,11 +21,12 @@
       font-family: 'Shadows Into Light', cursive;
       width: 100%;
       margin-top: 10vh;
-      font-size: 20vh;
+      font-size: 60vh;
       text-align: center;
       animation: fadeIn 1s forwards;
       opacity: 0;
       transition: .5s;
+      display: none;
     }
     @keyframes fadeIn {
       100% {
@@ -34,10 +35,10 @@
     }
     .hello-description {
       width: 100%;
-      margin-top: 60vh;
+      margin-top: 30vh;
       font-size: 5vh;
       text-align: center;
-      animation: fadeIn 1s .75s forwards;
+      /* animation: fadeIn 1s .75s forwards; */
       opacity: 0;
     }
     .email-section {
@@ -46,10 +47,12 @@
       text-align: center;
     }
     .email {
-      margin-top: 25vh;
+      margin-top: 5vh;
       font-size: 14vh;
       font-weight: lighter;
       display: inline-block;
+      opacity: 0;
+      animation: fadeIn 1s 1s forwards;
     }
 
     .email::after {
@@ -73,9 +76,11 @@
   text-align: center;
   height: 40px;
   top: 20%;
-  font-size: 15vh;
+  font-size: 10vh;
   font-family: 'Shadows Into Light', cursive;
-
+  opacity: 0;
+  animation: fadeIn 1s .25s forwards;
+  display: none;
 }
 
 p {
@@ -161,8 +166,8 @@ p {
   </div>
 
   <div class = "email-section">
-    <a href = "@mailto:hello@azuresky.com" class = "email">
-      hello@azuresky.com
+    <a href = "@mailto:ufoaz01@gmail.com" class = "email">
+      ufoaz01@gmail.com
     </a>
 
   </div>

@@ -3,7 +3,7 @@ body {
   margin: 0;
   background-color: black;
   font-family: 'Questrial', sans-serif;
-  overflow-x: hidden;
+  overflow: hidden;
   color: white;
   transition: .5s;
   width: 100vw;
@@ -69,6 +69,9 @@ a {
   /* transform: rotate(90deg) ; */
   /* position: inherit; */
   /* margin-top: 50vh; */
+  pointer-events: none;
+  text-decoration: line-through;
+  color: gray;
 }
 .nav-bar a{
   font-size: 35px;
@@ -113,6 +116,9 @@ a {
   text-align: center;
   /* margin-top: 4vh; */
   /* margin-left: 45%; */
+  pointer-events: none;
+  text-decoration: line-through;
+  color: gray;
 }
 .right {
   /* position: inherit;
