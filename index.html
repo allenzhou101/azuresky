@@ -12,11 +12,14 @@
 </head>
 <body>
 
-<div class = "outerBackgroundDiv"><div class = "backgroundDiv"></div></div>
+<div class = "outerBackgroundDiv">
+  <div class = "backgroundDiv"></div>
+</div>
 <div class = "nav-bar">
-  <a href = "#0" class = "left" onmouseover = "changeColor(true)" onmouseout = "changeColor(false)" onclick = "pageTransition('about')">about</a><!--
-  --><a href = "work.html" class = "top" onmouseover = "changeColor(true)" onmouseout = "changeColor(false)" onclick = "pageTransition('work')">work</a><!--
-  --><a href = "contact.html" class = "right" onmouseover = "changeColor(true)" onmouseout = "changeColor(false)" onclick = "pageTransition('contact')">contact</a>
+  <a href = "#0" class = "left" onmouseover = "changeColor(true)" onmouseout = "changeColor(false)" onclick = "pageTransition('about')">about us</a><!--
+  --><a href = "#0" class = "top" onmouseover = "changeColor(true)" onmouseout = "changeColor(false)" onclick = "pageTransition('work')">work</a><!--
+  --><a href = "#0" class = "right" onmouseover = "changeColor(true)" onmouseout = "changeColor(false)" onclick = "pageTransition('careers')">careers</a><!--
+  --><a href = "#0" class = "far-right" onmouseover = "changeColor(true)" onmouseout = "changeColor(false)" onclick = "pageTransition('contact')">contact</a>
 </div>
 <div class = "title-container">
   <div class = "title">
@@ -24,35 +27,16 @@
   </div>
   <div class = "title-description">
     <div class = "des-a"><div class = "des-a-inner">
-      We are a creative agency that develops mobile and web interfaces.</div>
+      We are a digital agency that develops mobile and web interfaces. </div>
     </div>
-    <div class = "des-b"><div class = "des-b-inner">Creativity is a wild mind & a disciplined eye.</div>
-    </div>
-  </div>
-  <br>
-<div class = "extra">
-    <svg>
-    <circle id='shape' cx='120' cy='120' r='30' stroke-dasharray='1000' stroke-dashoffset='1000'/>
-    <circle id='shape2' cx='120' cy='120' r='30' stroke-dasharray='1000' stroke-dashoffset='1000'/>
-  </svg>
-    <div class = "title-dot">
-    </div>
-    <div class = "title-continue" onmousedown = "changeColor()">
-      <div>click anywhere to continue</div>
+    <div class = "des-a">
+      <div class = "des-a-inner" style = "text-transform: uppercase; color: #b9c1ce;">
+        <!-- Our goal is to create immersive experiences that combine unique aesthetics & practicality. -->
+        This site is currently under construction. Full site will be available soon.
+      </div>
     </div>
   </div>
-  <!-- <div class = "emoji-rain" >
-    <div style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;"
- unselectable="on"
- onselectstart="return false;"
- onmousedown="return false;">tap</div>
-  </div> -->
-  <div class="c-scrolldown">
-    <div class="c-line"></div>
-  </div>
-  <div class = "about-page">
-
-  </div>
+</div>
 <script>
 
 if (screen.width > 1080) {
@@ -122,69 +106,23 @@ function mobileFriendly() {
 }
 function changeColor(bool) {
   if (bool) {
-    document.querySelector('.outerBackgroundDiv').style.filter = "brightness(0)";
+    document.querySelector('.backgroundDiv').style.filter = "brightness(0)";
   }
   else {
-    document.querySelector('.outerBackgroundDiv').style.filter = "brightness(100%)";
+    document.querySelector('.backgroundDiv').style.filter = "brightness(80%)";
   }
 }
 
     function pageTransition(word) {
     document.body.style.opacity = "0";
+    document.body.style.transform = "translateY(-5vh)";
       setTimeout(function() {
         window.location.href = word + '.html';
+        document.body.style.transform = "translateY(0vh)";
+
       }, 500);
-
-
     }
 </script>
 
-<script>
-// var emojiBoolean = true;
-//   document.querySelector('.emoji-rain').addEventListener("mousedown", function() {
-//     var num = Math.random()*50;
-//     makeEmoji();
-//   });
-//   function makeEmoji() {
-//     var marginLeft = Math.random()*screen.width;
-//     var animDuration = Math.random()*5 + 5;
-//     var emoji = ['🌽', '🍇', '🍌', '🍒', '🍕', '🍷', '🍭', '💖', '💩', '🐷', '🐸', '🐳', '🎃', '🎾', '🌈', '🍦', '💁', '🔥', '😁', '😱', '🌴', '👏', '💃'];
-//     var emojiNum = parseInt(Math.random()*emoji.length);
-//     var div = document.createElement('div');
-//     div.className = "emojiDiv";
-//     div.style.marginLeft = marginLeft + "px";
-//     div.style.animationName = "emojiAnimation";
-//     div.style.animationDuration = animDuration + "s";
-//     div.style.animationIterationCount = "1";
-//     div.style.animationTimingFunction = "linear";
-//     div.style.animationFillMode = "forwards";
-//     div.style.position = "absolute";
-//     div.style.fontSize = "20px";
-//     div.style.pointerEvents = "none";
-//     var zIndex = Math.random() * 2.5 + .5;
-//     var parsedzIndex = parseInt(zIndex);
-//     div.style.transform = "scale(" + zIndex + ")";
-//     div.style.zIndex = "" + parsedzIndex;
-//     div.style.color = "black";
-//     div.style.filter = "brightness(80%) blur(0px)";
-//     div.addEventListener("animationend", function() {
-//       document.body.removeChild(div);
-//     }, false);
-//     div.innerHTML = "" + emoji[emojiNum];
-//     document.body.appendChild(div);
-//   }
-//
-//
-//
-document.addEventListener("scroll", function() {
-  var y = window.scrollY;
-  if (y > screen.height){
-    document.querySelector(".nav-bar").style.position = "fixed";
-  }
-  else {
-    document.querySelector(".nav-bar").style.position = "absolute";
-  }
-});
-</script>
 </body>
 </html>

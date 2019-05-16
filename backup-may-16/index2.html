@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel = "stylesheet" href = "main.css">
+  <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="  https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.0/TweenMax.min.js"></script>
+  <link rel="icon" href="images/dallas-skyline.jpg" type="image/gif" sizes="16x16">
+
+</head>
+<body>
+
+<div class = "outerBackgroundDiv"><div class = "backgroundDiv"></div></div>
+<div class = "nav-bar">
+  <a href = "#0" class = "left" onmouseover = "changeColor(true)" onmouseout = "changeColor(false)" onclick = "pageTransition('about')">about us</a><!--
+  --><a href = "work.html" class = "top" onmouseover = "changeColor(true)" onmouseout = "changeColor(false)" onclick = "pageTransition('work')">careers</a><!--
+  --><a href = "contact.html" class = "right" onmouseover = "changeColor(true)" onmouseout = "changeColor(false)" onclick = "pageTransition('careers')">careers</a><!--
+  --><a href = "contact.html" class = "right" onmouseover = "changeColor(true)" onmouseout = "changeColor(false)" onclick = "pageTransition('contact')">contact</a>
+</div>
+<div class = "title-container">
+  <div class = "title">
+    <div class = "title-animation">Azure Sky</div>
+  </div>
+  <div class = "title-description">
+    <div class = "des-a"><div class = "des-a-inner">
+      We are a creative agency that develops mobile and web interfaces.</div>
+    </div>
+    <div class = "des-b"><div class = "des-b-inner">
+      <!-- Creativity is a wild mind & a disciplined eye. -->
+    </div>
+    </div>
+  </div>
+
+
+
+
+  <div class = "featured-projects-indicator">
+
+    <!-- <div class="c-scrolldown">
+      <div class="c-line"></div>
+    </div> -->
+    <!-- <div class = "arrow">
+      &#8595;
+    </div> -->
+    <a href = "#0" class = "featured-text">
+      Featured Projects Below
+
+    </a>
+    <!-- <div class = "arrow">
+      &#8595;
+    </div> -->
+    <div class = "line"></div>
+
+  </div>
+  <br>
+  <!-- <div class = "emoji-rain" >
+    <div style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;"
+ unselectable="on"
+ onselectstart="return false;"
+ onmousedown="return false;">tap</div>
+  </div> -->
+  <!-- <div class="c-scrolldown">
+    <div class="c-line"></div>
+  </div> -->
+</div>
+  <div class = "featured-work-container">
+    <div class = "featured-title">
+      <div class = "word">apple</div>
+      <div class = "word">apple</div><div class = "word">apple</div>
+      <div class = "word">apple</div>
+      <div class = "word">apple</div><div class = "word">apple</div><div class = "word">apple</div><div class = "word">apple</div><div class = "word">apple</div><div class = "word">apple</div>
+      <div class = "word">apple</div>
+      <div class = "word">apple</div>
+      <div class = "word">apple</div>
+      <div class = "word">apple</div>
+    </div>
+  </div>
+  <div class = "footer">
+    Work 1
+  </div>
+
+<script>
+
+if (screen.width > 1080) {
+  mobileFriendly();
+}
+function mobileFriendly() {
+
+      var num = 0;
+      var marginLeft = 0;
+      var marginTop = -20;
+      var circleSize = 20;
+      /*var backgroundDiv = document.createElement("div");
+      backgroundDiv.className = "backgroundDiv";
+      document.body.appendChild(backgroundDiv);*/
+      var stop = 0;
+
+      //document.addEventListener("mousedown", dots);
+      callDots();
+      function callDots() {
+        if (stop < 100){
+          dots();
+          setTimeout(callDots, 25);
+        }
+      }
+
+      function removeDots() {
+        var element = document.querySelector(".backgroundDiv");
+        var element2 = document.querySelector(".circ");
+        element.removeChild(element2);
+      }
+      function removeTheDots() {
+        var element2 = document.querySelector(".circ");
+        if  (typeof element2 != 'undefined') {
+          removeDots();
+          setTimeout(removeTheDots, 25);
+        }
+      }
+
+      function dots() {
+
+          num++;
+          stop++;
+
+          marginTop += circleSize;
+          if (num == 6) {
+            num = 0;
+            marginLeft += circleSize;
+            marginTop = -20;
+          }
+          var div = document.createElement("div");
+          div.style.width = circleSize + "vh";
+          div.style.height = circleSize + "vh";
+          div.style.borderRadius = "0%";
+          div.style.background = "#007FFF";
+          div.style.position = "absolute";
+          div.style.marginLeft = marginLeft + "vh";
+          div.style.marginTop = marginTop + "vh";
+          div.style.padding = "0";
+          var emojiArray = ["🙉", "😂", "👋", "👋", "", "", "", ""];
+          var emojiNum = parseInt(Math.random() * 8);
+          div.innerHTML = emojiArray[emojiNum];
+          console.log(emojiArray[2]);
+          div.className = "circ";
+          document.querySelector('.backgroundDiv').appendChild(div);
+      }
+
+}
+function changeColor(bool) {
+  if (bool) {
+    document.querySelector('.outerBackgroundDiv').style.filter = "brightness(0)";
+  }
+  else {
+    document.querySelector('.outerBackgroundDiv').style.filter = "brightness(100%)";
+  }
+}
+
+    function pageTransition(word) {
+    document.body.style.opacity = "0";
+      setTimeout(function() {
+        window.location.href = word + '.html';
+      }, 500);
+
+
+    }
+</script>
+
+<script>
+// var emojiBoolean = true;
+//   document.querySelector('.emoji-rain').addEventListener("mousedown", function() {
+//     var num = Math.random()*50;
+//     makeEmoji();
+//   });
+//   function makeEmoji() {
+//     var marginLeft = Math.random()*screen.width;
+//     var animDuration = Math.random()*5 + 5;
+//     var emoji = ['🌽', '🍇', '🍌', '🍒', '🍕', '🍷', '🍭', '💖', '💩', '🐷', '🐸', '🐳', '🎃', '🎾', '🌈', '🍦', '💁', '🔥', '😁', '😱', '🌴', '👏', '💃'];
+//     var emojiNum = parseInt(Math.random()*emoji.length);
+//     var div = document.createElement('div');
+//     div.className = "emojiDiv";
+//     div.style.marginLeft = marginLeft + "px";
+//     div.style.animationName = "emojiAnimation";
+//     div.style.animationDuration = animDuration + "s";
+//     div.style.animationIterationCount = "1";
+//     div.style.animationTimingFunction = "linear";
+//     div.style.animationFillMode = "forwards";
+//     div.style.position = "absolute";
+//     div.style.fontSize = "20px";
+//     div.style.pointerEvents = "none";
+//     var zIndex = Math.random() * 2.5 + .5;
+//     var parsedzIndex = parseInt(zIndex);
+//     div.style.transform = "scale(" + zIndex + ")";
+//     div.style.zIndex = "" + parsedzIndex;
+//     div.style.color = "black";
+//     div.style.filter = "brightness(80%) blur(0px)";
+//     div.addEventListener("animationend", function() {
+//       document.body.removeChild(div);
+//     }, false);
+//     div.innerHTML = "" + emoji[emojiNum];
+//     document.body.appendChild(div);
+//   }
+//
+//
+//
+window.addEventListener("scroll", function() {
+  var y = window.scrollY;
+  if (y > screen.height){
+    document.querySelector(".nav-bar").style.position = "fixed";
+  }
+  else {
+    document.querySelector(".nav-bar").style.position = "fixed";
+  }
+  y *= 1.2;
+  // document.querySelector(".footer").style.transform = "translateY(-" + y + "px)";
+  var workBottom = screen.height * 1.5;
+  if (y > workBottom) {
+    document.querySelector(".footer").style.zIndex = "-1";
+  }
+  else {
+    document.querySelector(".footer").style.zIndex = "-3";
+
+  }
+  var heroTranslate = y / 10;
+  // document.querySelector(".title").style.transform = "translateX(-" + heroTranslate + "px)";
+  // document.querySelector(".des-a").style.transform = "translateX(" + heroTranslate + "px)";
+  var opacityNum = 1 - (y / 100);
+  console.log(opacityNum);
+  // document.querySelector(".title-container").style.filter = "opacity(" + opacityNum + ")";
+  // document.querySelector(".outerBackgroundDiv").style.filter = "opacity(" + opacityNum + ")";
+});
+</script>
+</body>
+</html>
