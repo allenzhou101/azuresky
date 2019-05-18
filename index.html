@@ -122,6 +122,15 @@ function changeColor(bool) {
 
       }, 500);
     }
+
+document.addEventListener("mousemove", function(e) {
+  var x = e.clientX - screen.width / 2;
+  var y = e.clientY - screen.height / 2;
+  var shadowX = x / 50;
+  var shadowY = y / 50;
+  console.log(shadowX);
+  document.querySelector('.title').style.textShadow = shadowX + "px " + shadowY + "px #1b86f9";
+});
 </script>
 
 </body>

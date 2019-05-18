@@ -171,9 +171,10 @@ a {
     display: inline-block;
     height: 70vh;
     overflow: hidden;
+    /* text-shadow: 3px 3px #1b86f9; */
+
     /* color: #007fff; */
     pointer-events: none;
-
   }
   .title-animation {
     transform: translateY(-65vh);
