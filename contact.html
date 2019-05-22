@@ -7,10 +7,40 @@
 
   <style>
   @media screen and (max-width: 1020px) {
-
+    .email {
+      color: #4a6084;
+      margin-top: 4.8vh;
+      font-size: 5vh;
+      height: 5vh;
+      font-weight: lighter;
+      display: inline-block;
+      opacity: 0;
+      transition: .5s;
+      animation: fadeIn 1s .25s forwards;
+    }
+    @keyframes play {
+      100% {
+        transform: translateY(-81vh);
+      }
+    }
   }
   @media screen and (min-width: 1020px) {
-
+    .email {
+      color: #4a6084;
+      margin-top: 4.8vh;
+      font-size: 15vh;
+      height: 5vh;
+      font-weight: lighter;
+      display: inline-block;
+      opacity: 0;
+      transition: .5s;
+      animation: fadeIn 1s .25s forwards;
+    }
+    @keyframes play {
+      100% {
+        transform: translateY(-84vh);
+      }
+    }
   }
   a {
     text-decoration: none;
@@ -54,28 +84,14 @@
     }
     .email-section {
       top: -20vh;
-      height: 60vh;
+      height: 200vh;
       width: 100%;
       text-align: center;
-      animation: play 10s infinite linear;
+      animation: play 5s infinite linear;
 
     }
-    @keyframes play {
-      100% {
-        transform: translateY(-100vh);
-      }
-    }
-    .email {
-      color: #4a6084;
-      margin-top: 5vh;
-      font-size: 10vw;
-      height: 5vh;
-      font-weight: lighter;
-      display: inline-block;
-      opacity: 0;
-      transition: .5s;
-      animation: fadeIn 1s .25s forwards;
-    }
+
+
     .email:nth-child(even){
       transform: translateY(15vh) translateX(-15vh);
     }
@@ -277,7 +293,7 @@ p {
 // changeWord();
 // setInterval(changeWord, 4000);
 
-var emailNumber = 20;
+var emailNumber = 30;
 for (var i = 0; i < emailNumber; i++) {
   var a = document.createElement("a");
   a.className = "email";
