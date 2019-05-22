@@ -3,10 +3,7 @@
   pointer-events: none;
   text-decoration: line-through;
 }
-
-
 body {
-  height: 100vh;
   margin: 0;
   background-color: black;
   font-family: 'Questrial', sans-serif;
@@ -20,184 +17,232 @@ a {
   text-decoration: none;
   color: white;
 }
-.backgroundDiv {
-  position: absolute;
-  top: 0;
-  z-index: -2;
-  transform: scale(1);
-  filter: brightness(80%);
-  transition: .5s;
-
-}
-.outerBackgroundDiv {
-  transition: .5s;
-}
-.circ {
-    transition: .5s;
-    animation: pulse 10s infinite linear alternate;
-    z-index: 0;
-    font-size: 30px;
-    display: inline-block;
-    text-align: center;
-    filter: brightness(80%) blur(0px);
-    color: transparent;
-    padding-top: 7vh;
-    /*transform: rotateY(30deg) ; */
-}
-.circ:hover {
-  filter: brightness(100%) blur(0px);
-  color: white;
-  /* transform: scale(1.5) rotateX(0deg) rotateY(60deg); */
-}
-@keyframes pulse {
-  20% {
-    background: #42f4e5;
-  }
-  40% {
-    background: #d6ff51;
-  }
-  60% {
-    background: #ed7d4e;
-  }
-  80% {
-    background: #b145ef;
-  }
-  100% {
-    background: #f449a7;
-  }
-}
-
-.nav-bar {
-  position: absolute;
-  z-index: 5;
-  width: 80%;
-  margin-left: 10%;
-  margin-top: 6vh;
-  animation: in 1s 2s forwards;
-  opacity: 0;
-}
-@keyframes in {
-  100% {
-    opacity: 1;
-  }
-}
-.left {
-  /* transform: rotate(90deg) ; */
-  /* position: inherit; */
-  /* margin-top: 50vh; */
-  /* pointer-events: none; */
-  /* text-decoration: line-through; */
-  /* color: gray; */
-}
-.nav-bar a{
-  font-size: 35px;
-
-  transition: .5s;
-  text-align: center;
-  display: inline-block;
-  letter-spacing: 0px;
-  height: 4vh;
-  width: 25%;
-  text-transform: uppercase;
-  /* color: transparent;
-  text-shadow:
-  -1px -1px 0 #fff,
-  1px -1px 0 #fff,
-  -1px 1px 0 #fff,
-  1px 1px 0 #fff; */
-  /* animation: pulseNow 5s infinite; */
-}
-@keyframes pulseNow {
-  20% {
-    color: #42f4e5;
-  }
-  40% {
-    color: #d6ff51;
-  }
-  60% {
-    color: #ed7d4e;
-  }
-  80% {
-    color: #b145ef;
-  }
-  100% {
-    color: #f449a7;
-  }
-}
-.nav-bar a:hover {
-  letter-spacing: 2px;
-}
-.top {
-  /* position: inherit; */
-  text-align: center;
-  /* margin-top: 4vh; */
-  /* margin-left: 45%; */
-  /* pointer-events: none; */
-  /* text-decoration: line-through; */
-  /* color: gray; */
-}
-.right {
-  /* position: inherit;
-  transform: rotate(-90deg) ;
-  right: 0vw;
-  margin-top: 50vh; */
-}
-
-
-
-@keyframes fadeIn {
-  100% {
-    transform: translateY(0);
-  }
-}
-.title-container {
-  width: 100%;
-  /* height: 100vw;
-  vertical-align: bottom; */
-  display: inline-block;
-  margin-top: 15vh;
-  text-align: center;
-  /* z-index: -2; */
-  position: relative;
-  pointer-events: none;
-
-}
+@media screen and (max-width: 1020px) {
   .title {
+    display: none;
+  }
+  body {
+    animation: fadeIn 1s forwards;
+    transform: skew(-5deg);
+    opacity: 0;
+
+  }
+  @keyframes fadeIn {
+    100% {
+      opacity: 1;
+      transform: skew(0);
+    }
+  }
+  .mobile-title {
+    width: 100%;
+    font-size: 10vw;
+    text-align: center;
     font-family: 'Shadows Into Light', cursive;
     font-weight: bold;
-    font-size: 40vh;
-    width: 100%;
-    margin-top: 17vh;
-    display: inline-block;
-    height: 70vh;
-    overflow: hidden;
-    /* text-shadow: 3px 3px #1b86f9; */
-
-    /* color: #007fff; */
-    pointer-events: none;
-  }
-  .title-animation {
-    transform: translateY(-65vh);
-    transition: 1s;
-    animation: fadeIn 1s 1s forwards;
+    margin-bottom: 5vh;
 
   }
-  .title-description {
-    font-size: 1.5vw;
-    margin-top: 0vh;
-    transform: translateY(-12vh);
-    /* transform: translateY(-10vh); */
-    width: 70%;
-    /* color: #bcbcbc; */
-    display: inline-block;
-   }
-   .des-a, .des-b {
-     overflow: hidden;
-     height: 4vh;
-   }
-   .des-a-inner, .des-b-inner {
-     transform: translateY(-5vh);
-     animation: fadeIn 1s 1.5s forwards;
-     transition: 1s;
+  .nav-bar a {
+    font-size: 20vw;
+    display: block;
+    text-align: center;
+  }
+  .title-description div {
+    font-size: 5vw;
+    margin: 2vw;
+    text-align: center;
+    margin-top: 5vh;
+  }
+}
+@media screen and (min-width: 1020px) {
+                            .mobile-title {
+                              display:  none;
+                            }
 
-   }
+
+
+
+                          .backgroundDiv {
+                            position: absolute;
+                            top: 0;
+                            z-index: -2;
+                            transform: scale(1);
+                            filter: brightness(80%);
+                            transition: .5s;
+
+                          }
+                          .outerBackgroundDiv {
+                            transition: .5s;
+                          }
+                          .circ {
+                              transition: .5s;
+                              animation: pulse 10s infinite linear alternate;
+                              z-index: 0;
+                              font-size: 30px;
+                              display: inline-block;
+                              text-align: center;
+                              filter: brightness(80%) blur(0px);
+                              color: transparent;
+                              padding-top: 7vh;
+                              /*transform: rotateY(30deg) ; */
+                          }
+                          .circ:hover {
+                            filter: brightness(100%) blur(0px);
+                            color: white;
+                            /* transform: scale(1.5) rotateX(0deg) rotateY(60deg); */
+                          }
+                          @keyframes pulse {
+                            20% {
+                              background: #42f4e5;
+                            }
+                            40% {
+                              background: #d6ff51;
+                            }
+                            60% {
+                              background: #ed7d4e;
+                            }
+                            80% {
+                              background: #b145ef;
+                            }
+                            100% {
+                              background: #f449a7;
+                            }
+                          }
+
+                          .nav-bar {
+                            position: absolute;
+                            z-index: 5;
+                            width: 80%;
+                            margin-left: 10%;
+                            margin-top: 6vh;
+                            animation: in 1s 2s forwards;
+                            opacity: 0;
+                          }
+                          @keyframes in {
+                            100% {
+                              opacity: 1;
+                            }
+                          }
+                          .left {
+                            /* transform: rotate(90deg) ; */
+                            /* position: inherit; */
+                            /* margin-top: 50vh; */
+                            /* pointer-events: none; */
+                            /* text-decoration: line-through; */
+                            /* color: gray; */
+                          }
+                          .nav-bar a{
+                            font-size: 35px;
+
+                            transition: .5s;
+                            text-align: center;
+                            display: inline-block;
+                            letter-spacing: 0px;
+                            height: 4vh;
+                            width: 33%;
+                            text-transform: uppercase;
+                            /* color: transparent;
+                            text-shadow:
+                            -1px -1px 0 #fff,
+                            1px -1px 0 #fff,
+                            -1px 1px 0 #fff,
+                            1px 1px 0 #fff; */
+                            /* animation: pulseNow 5s infinite; */
+                          }
+                          @keyframes pulseNow {
+                            20% {
+                              color: #42f4e5;
+                            }
+                            40% {
+                              color: #d6ff51;
+                            }
+                            60% {
+                              color: #ed7d4e;
+                            }
+                            80% {
+                              color: #b145ef;
+                            }
+                            100% {
+                              color: #f449a7;
+                            }
+                          }
+                          .nav-bar a:hover {
+                            letter-spacing: 2px;
+                          }
+                          .top {
+                            /* position: inherit; */
+                            text-align: center;
+                            /* margin-top: 4vh; */
+                            /* margin-left: 45%; */
+                            /* pointer-events: none; */
+                            /* text-decoration: line-through; */
+                            /* color: gray; */
+                          }
+                          .right {
+                            /* position: inherit;
+                            transform: rotate(-90deg) ;
+                            right: 0vw;
+                            margin-top: 50vh; */
+                          }
+
+
+
+                          @keyframes fadeIn {
+                            100% {
+                              transform: translateY(0);
+                            }
+                          }
+                          .title-container {
+                            width: 100%;
+                            /* height: 100vw;
+                            vertical-align: bottom; */
+                            display: inline-block;
+                            margin-top: 15vh;
+                            text-align: center;
+                            /* z-index: -2; */
+                            position: relative;
+                            pointer-events: none;
+
+                          }
+                            .title {
+                              font-family: 'Shadows Into Light', cursive;
+                              font-weight: bold;
+                              font-size: 40vh;
+                              width: 100%;
+                              margin-top: 17vh;
+                              display: inline-block;
+                              height: 70vh;
+                              overflow: hidden;
+                              transition: 0s;
+                              /* text-shadow: 3px 3px #1b86f9; */
+
+                              /* color: #007fff; */
+                              pointer-events: none;
+                            }
+
+                            .title-animation {
+                              transform: translateY(-65vh);
+                              transition: 1s;
+                              animation: fadeIn 1s 1s forwards;
+
+                            }
+                            .title-description {
+                              font-size: 1.5vw;
+                              margin-top: 0vh;
+                              transform: translateY(-12vh);
+                              /* transform: translateY(-10vh); */
+                              width: 70%;
+                              /* color: #bcbcbc; */
+                              display: inline-block;
+                             }
+                             .des-a, .des-b {
+                               overflow: hidden;
+                               height: 4vh;
+                             }
+                             .des-a-inner, .des-b-inner {
+                               transform: translateY(-5vh);
+                               animation: fadeIn 1s 1.5s forwards;
+                               transition: 1s;
+
+                             }
+    }

@@ -11,14 +11,14 @@
 
 </head>
 <body>
-
+<div class = "mobile-title">Azure Sky
+</div>
 <div class = "outerBackgroundDiv">
   <div class = "backgroundDiv"></div>
 </div>
 <div class = "nav-bar">
   <a href = "#0" class = "left" onmouseover = "changeColor(true)" onmouseout = "changeColor(false)" onclick = "pageTransition('about')">about us</a><!--
   --><a href = "#0" class = "top" onmouseover = "changeColor(true)" onmouseout = "changeColor(false)" onclick = "pageTransition('work')">work</a><!--
-  --><a href = "#0" class = "right" onmouseover = "changeColor(true)" onmouseout = "changeColor(false)" onclick = "pageTransition('careers')">careers</a><!--
   --><a href = "#0" class = "far-right" onmouseover = "changeColor(true)" onmouseout = "changeColor(false)" onclick = "pageTransition('contact')">contact</a>
 </div>
 <div class = "title-container">
@@ -38,7 +38,6 @@
   </div>
 </div>
 <script>
-
 if (screen.width > 1080) {
   mobileFriendly();
 }
@@ -98,11 +97,18 @@ function mobileFriendly() {
           var emojiArray = ["🙉", "😂", "👋", "👋", "", "", "", ""];
           var emojiNum = parseInt(Math.random() * 8);
           div.innerHTML = emojiArray[emojiNum];
-          console.log(emojiArray[2]);
           div.className = "circ";
           document.querySelector('.backgroundDiv').appendChild(div);
       }
 
+      document.addEventListener("mousemove", function(e) {
+        var x = e.clientX - screen.width / 2;
+        var y = e.clientY - screen.height / 2;
+        var shadowX = x / 50;
+        var shadowY = y / 50;
+        document.querySelector('.title').style.textShadow = shadowX + "px " + shadowY + "px 1px #1b86f9";
+        // document.querySelector('.title').style.transform = "translateY(" + shadowY + "px)" + "translateX(" + shadowX + "px)";
+      });
 }
 function changeColor(bool) {
   if (bool) {
@@ -123,14 +129,6 @@ function changeColor(bool) {
       }, 500);
     }
 
-document.addEventListener("mousemove", function(e) {
-  var x = e.clientX - screen.width / 2;
-  var y = e.clientY - screen.height / 2;
-  var shadowX = x / 50;
-  var shadowY = y / 50;
-  console.log(shadowX);
-  document.querySelector('.title').style.textShadow = shadowX + "px " + shadowY + "px #1b86f9";
-});
 </script>
 
 </body>
