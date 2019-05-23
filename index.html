@@ -104,9 +104,9 @@ function mobileFriendly() {
       document.addEventListener("mousemove", function(e) {
         var x = e.clientX - screen.width / 2;
         var y = e.clientY - screen.height / 2;
-        var shadowX = x / 50;
-        var shadowY = y / 50;
-        document.querySelector('.title').style.textShadow = shadowX + "px " + shadowY + "px 1px #1b86f9";
+        var shadowX = -x / 50;
+        var shadowY = -y / 50;
+        document.querySelector('.title').style.textShadow = "" + shadowX + "px " + shadowY + "px 1px #1b86f9";
         // document.querySelector('.title').style.transform = "translateY(" + shadowY + "px)" + "translateX(" + shadowX + "px)";
       });
 }
